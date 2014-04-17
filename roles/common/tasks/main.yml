@@ -1,4 +1,3 @@
 ---
 - name: Generated config file for BIRD
-  template: src=bird.conf.j2 dest=/etc/bird/bird.{{ item }}.conf backup=no
-  with_items: '{{ reservedID + border_reservedID + ospf_reservedID }}'
+  template: src=config.j2 dest=/tmp/config.conf backup=no

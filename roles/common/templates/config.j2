@@ -1,0 +1,17 @@
+# Config file
+
+{% for interface in interfaces %}
+{% if interface.additional is defined and interface.additional %}
+{% if interface.additional['border'] is defined and interface.additional['border'] %}
+- id: 101
+  kernel:
+    name: {{ prefix_tables }}{{ interface.name }}
+  ospf:
+    scan_time: 20
+    import: none
+    export: all
+
+{% endif %}
+{% endif %}
+{% endfor %}
+
